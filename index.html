@@ -23,7 +23,7 @@
             font-family: 'Satoshi', sans-serif;
             background-color: var(--bg-color);
             color: #f9fafb;
-            overflow: hidden;
+            overflow-x: hidden;
             touch-action: manipulation;
         }
         
@@ -64,25 +64,28 @@
         }
 
         .step {
-            position: absolute;
-            top: 50%; left: 50%;
-            width: 100%;
-            background: rgba(26, 26, 26, 0.5);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            opacity: 0;
-            transform: translate(-50%, -50%) scale(0.95);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-            pointer-events: none;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-        }
+ 	 display: none; /* only the active one shows */
+ 	 width: 100%;
+ 	 margin: 3rem auto;
+ 	 background: rgba(26, 26, 26, 0.5);
+ 	 backdrop-filter: blur(16px);
+  	-webkit-backdrop-filter: blur(16px);
+ 	 border: 1px solid rgba(255, 255, 255, 0.1);
+ 	 opacity: 0;
+ 	 transform: translateY(20px) scale(0.95);
+ 	 transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+ 	 pointer-events: none;
+ 	 box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+	}
+
         
         .step.active {
-            opacity: 1;
-            transform: translate(-50%, -50%) scale(1);
-            pointer-events: all;
-        }
+  	display: block;
+  	opacity: 1;
+  	transform: translateY(0) scale(1);
+ 	pointer-events: all;
+	}
+
 
         .step .anim-child { opacity: 0; transform: translateY(25px); }
         
@@ -188,7 +191,7 @@
                 <h2 class="anim-child text-4xl md:text-5xl font-bold text-gradient mb-4">My Wish For You</h2>
                 <p class="anim-child text-gray-300 mb-8 text-lg">May the next year bring you all the love, success, and pure happiness you so rightfully deserve. May your dreams soar higher than ever.</p>
                 <div class="h-20 flex items-center justify-center">
-                     <p id="final-wish" class="final-wish-text font-bold text-xl text-pink-300">Happy Birthday, my crush! ❤️</p>
+                     <p id="final-wish" class="final-wish-text font-bold text-xl text-pink-300">Happy Birthday! ❤️</p>
                 </div>
                 <button id="confetti-btn" class="anim-child btn text-white py-3 px-10 rounded-full">Celebrate!</button>
                 <footer class="anim-child mt-12 text-gray-500 text-sm">Crafted with ❤️ and code, just for you.</footer>
